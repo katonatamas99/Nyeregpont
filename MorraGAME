@@ -1,0 +1,48 @@
+
+import java.util.Scanner;
+import java.util.Random;
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+
+/**
+ *
+ * @author Tomi
+ */
+public class Morra {
+    public static void main(String[] args) {
+    Scanner myObj = new Scanner(System.in);
+    
+
+    int szam,pont=0;
+    String valasz;
+    do{
+        do{
+    System.out.println("A morra játék elkezdődött írjon be egy számot 1 és 5 között :");
+     szam = myObj.nextInt();
+    if(szam > 0 && 5 >= szam ){
+    System.out.println("Az ön száma " + szam);
+    }
+    
+    }while( szam>=5 || szam < 0  );
+Random rand = new Random();
+int random = rand.nextInt(5);
+if(random==szam)
+{
+    System.out.println("Nyert");
+    pont=pont+3;
+    System.out.println("Pontja" +pont);
+}
+else{
+System.out.println("Vesztett");
+    pont=pont-3;
+       System.out.println("Pontja:" +pont);
+        }
+System.out.println("szeretne még játszani?");
+ Scanner myObj2 = new Scanner(System.in);
+valasz = myObj2.nextLine();
+}while("igen".equals(valasz));
+  
+    }
+}

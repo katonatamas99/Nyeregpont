@@ -1,4 +1,3 @@
-
 import java.util.Scanner;
 import java.util.Random;
 /*
@@ -19,24 +18,38 @@ public class Morra {
     String valasz;
     do{
         do{
-    System.out.println("A morra játék elkezdődött írjon be egy számot 1 és 5 között :");
+    System.out.println("A morra játék elkezdődött írjon be egy számot egyest vagy kettest :");
      szam = myObj.nextInt();
-    if(szam > 0 && 5 >= szam ){
-    System.out.println("Az ön száma " + szam);
-    }
     
-    }while( szam>=5 || szam < 0  );
+    }while( szam>6 && szam < 0  );
 Random rand = new Random();
-int random = rand.nextInt(5);
+int random = rand.nextInt(3)+1;
 if(random==szam)
 {
     System.out.println("Nyert");
+    if(szam==1){
+    pont=pont+1;
+    }
+    if(szam==2){
+    pont=pont+2;
+    }
+    if(szam==3){
     pont=pont+3;
-    System.out.println("Pontja" +pont);
+    }
+
+    System.out.println("Pontja: " +pont);
 }
 else{
 System.out.println("Vesztett");
-    pont=pont-3;
+    if(szam==1){
+    pont=pont-random;
+    }
+    if(szam==2){
+    pont=pont-random;
+    }
+    if(szam==3){
+    pont=pont-random;
+    }
        System.out.println("Pontja:" +pont);
         }
 System.out.println("szeretne még játszani?");

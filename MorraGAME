@@ -21,7 +21,7 @@ public class Morra {
     System.out.println("A morra játék elkezdődött írjon be egy számot egyest vagy kettest :");
      szam = myObj.nextInt();
     
-    }while( szam>6 && szam < 0  );
+    }while( szam>3 && szam < 0  );
 Random rand = new Random();
 int random = rand.nextInt(3)+1;
 if(random==szam)
